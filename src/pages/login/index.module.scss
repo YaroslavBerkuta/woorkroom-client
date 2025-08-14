@@ -1,0 +1,74 @@
+.wrapper {
+  height: 95vh;
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  background-color: #3f8cff;
+  border-radius: 20px 0px 0px 20px;
+  padding: 85px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  p {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 600;
+  }
+}
+
+.right {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  p {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+  }
+}
+
+h1 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  margin-top: 50px;
+}
+
+.illustrationContainer {
+  margin-top: 50px;
+  max-width: 90%;
+  width: 100%;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+}
+
+.checkBoxWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  p {
+    color: #7d8592;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 400;
+  }
+}

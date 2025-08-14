@@ -1,0 +1,37 @@
+.input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #7d8592;
+  &:focus {
+    border-color: #007bff;
+  }
+}
+
+.label {
+  color: #7d8592;
+  font-size: 16px !important;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.error {
+  border-color: red;
+  color: red;
+  font-size: 12px;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: block;
+  width: 24px;
+  height: 24px;
+}

@@ -1,0 +1,34 @@
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hiddenCheckbox {
+  display: none;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #0A1629;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  transition: all 0.2s;
+}
+
+.checkmark {
+  width: 10px;
+  height: 10px;
+  background-color: #2563eb;
+}
+
+.label {
+  color: #7d8592;
+  font-size: 16px;
+  font-weight: 400;
+}
