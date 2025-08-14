@@ -4,6 +4,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   icon?: React.ReactNode;
+  wrapperStyle?: React.CSSProperties;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -11,10 +12,11 @@ export const Input: React.FC<InputProps> = ({
   error,
   icon,
   label,
+  wrapperStyle,
   ...props
 }) => {
   return (
-    <div>
+    <div style={wrapperStyle}>
       <span className={`${styles.label} ${error && styles.error}`}>
         {label}
       </span>

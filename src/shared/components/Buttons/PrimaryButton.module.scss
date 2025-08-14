@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f8cff;
+  padding: 15px 45px;
+  border-radius: 13px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  max-width: 190px;
+  button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &:hover {
+    background-color: #3a81eb;
+  }
+  svg:first-child {
+    margin-right: 10px;
+  }
+  svg:last-child {
+    margin-left: 10px;
+  }
+}
