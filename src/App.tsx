@@ -1,22 +1,30 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { routeTree } from "./routes/routeTree";
-import { useState } from "react";
+import { useEffect } from "react";
 import "@/assets/fonts/style.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { NotificationProvider, useStore } from "./shared";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const [auth, setAuth] = useState({ isAuthenticated: false });
+  const { isAuthenticated, company } = useStore();
   const router = createRouter({
     routeTree,
-    context: { auth, setAuth },
+    context: { isAuthenticated, company },
   });
 
+  useEffect(() => {
+    router.navigate({ to: "/" });
+    router.invalidate();
+  }, [isAuthenticated, company]);
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <NotificationProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} context={{ isAuthenticated }} />
+      </QueryClientProvider>
+    </NotificationProvider>
   );
 }
 

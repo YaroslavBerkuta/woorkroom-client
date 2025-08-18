@@ -1,6 +1,6 @@
-import HomePage from "@/pages/home.page";
+import HomePage from "@/pages/client-pages/home.page";
 import { createRoute } from "@tanstack/react-router";
-import AboutPage from "@/pages/about.page";
+import AboutPage from "@/pages/client-pages/about.page";
 import { clientLayoutRoute } from "./__client";
 
 export const HomeRoute = createRoute({
@@ -14,3 +14,4 @@ export const AboutRoute = createRoute({
   component: AboutPage,
   path: "/about",
 });
+

@@ -1,0 +1,18 @@
+.list {
+  max-height: 400px;
+  scrollbar-width: none;
+}
+
+.horizontal {
+  display: flex; /* робимо контейнер флекс */
+  flex-direction: row; /* елементи в ряд */
+  overflow-x: auto; /* горизонтальна прокрутка */
+  gap: 0.5rem; /* проміжок між елементами (2 * 0.25rem) */
+}
+
+.vertical {
+  display: flex; /* робимо контейнер флекс */
+  flex-direction: column; /* елементи в колонку */
+  overflow-y: auto; /* вертикальна прокрутка */
+  gap: 0.5rem; /* проміжок між елементами */
+}

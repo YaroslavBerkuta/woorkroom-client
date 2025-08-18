@@ -1,17 +1,17 @@
-import { Checkbox, Icon, Input, PrimaryButton } from "@/shared";
+import { authService, Icon, Input, PrimaryButton } from "@/shared";
 import styles from "./LoginForm.module.scss";
 import { useState } from "react";
 import z from "zod";
 import { useForm } from "@tanstack/react-form";
 
+
+
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-
   const { Field, handleSubmit } = useForm({
     defaultValues: {
       email: "",
       password: "",
-      remember: false,
     },
     validators: {
       onSubmit: z.object({
@@ -21,10 +21,11 @@ export const LoginForm = () => {
         password: z.string().min(6, {
           message: "Password must be at least 6 characters long",
         }),
-        remember: z.boolean(),
       }),
     },
-    onSubmit: () => { },
+    onSubmit: ({ value }) => {
+      authService.login(value);
+    },
   });
 
   return (
@@ -72,18 +73,6 @@ export const LoginForm = () => {
       />
 
       <div className={styles.checkBoxWrapper}>
-        <Field
-          name="remember"
-          children={(field) => (
-            <Checkbox
-              label="Remember me"
-              name={field.name}
-              checked={field.state.value}
-              onCheckedChange={(e) => field.handleChange(e)}
-            />
-          )}
-        />
-
         <p>Forgot Password?</p>
       </div>
       <PrimaryButton
